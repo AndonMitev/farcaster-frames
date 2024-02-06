@@ -18,9 +18,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       image: PuppyImages.second,
       buttons: [
         { label: `IsValid ${isValid}` },
-        { label: `Message: ${Object.keys(message).join(' ')}` }
+        { label: `Message: ${message?.raw}` }
       ],
-      post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame`
+      post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame`,
+      input: { text: 'is this placeholder?' }
     })
   );
 }
