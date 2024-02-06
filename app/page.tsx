@@ -1,5 +1,5 @@
 import { PuppyImages } from '@/lib/constants';
-import { getFrameMetadata } from '@coinbase/onchainkit';
+import { FrameMetadata, getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
 
 const frameMetadata = getFrameMetadata({
@@ -9,7 +9,7 @@ const frameMetadata = getFrameMetadata({
     }
   ],
   image: PuppyImages.first,
-  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=1`
+  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame`
 });
 
 export const metadata: Metadata = {
