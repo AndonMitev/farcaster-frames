@@ -3,15 +3,10 @@ import { getFrameHtmlResponse, getFrameMessage } from '@coinbase/onchainkit';
 import { NextRequest, NextResponse } from 'next/server';
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
-  let accountAddress;
-  let _isValid;
-
   const body = await req.json();
 
-  console.log(body);
-
   const { isValid, message } = await getFrameMessage(body);
-  _isValid = isValid;
+
   // if (isValid) {
   //   accountAddress = message.interactor.verified_accounts[0];
   // }
@@ -21,7 +16,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   return new NextResponse(
     getFrameHtmlResponse({
       image: PuppyImages.second,
-      buttons: [{ label: `Hello: ${_isValid}` }],
+      buttons: [
+        { label: `IsValid ${isValid}` },
+        { label: `Message: ${message}` }
+      ],
       post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame`
     })
   );
