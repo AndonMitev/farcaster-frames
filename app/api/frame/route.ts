@@ -11,17 +11,13 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   //   accountAddress = message.interactor.verified_accounts[0];
   // }
 
-  console.log(body);
+  console.log('message', message);
 
   return new NextResponse(
     getFrameHtmlResponse({
       image: PuppyImages.second,
-      buttons: [
-        { label: `IsValid ${isValid}` },
-        { label: `Message: ${message?.raw}` }
-      ],
       post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame`,
-      input: { text: 'is this placeholder?' }
+      input: { text: `Hello: ${message?.interactor.custody_address}` }
     })
   );
 }

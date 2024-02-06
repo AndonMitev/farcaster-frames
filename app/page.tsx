@@ -13,6 +13,7 @@ const frameMetadata = getFrameMetadata({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL!),
   title: 'Donnie Testing Frames',
   description: 'A frame where bugs happens wrapped in magic',
   openGraph: {
