@@ -1,11 +1,20 @@
 import { PuppyImages } from '@/lib/constants';
-import { FrameMetadata, getFrameMetadata } from '@coinbase/onchainkit';
+import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
 
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
       label: 'Begin'
+    },
+    {
+      label: 'Begin 2 test'
+    },
+    {
+      label: 'Begin 3'
+    },
+    {
+      label: 'Begin 4'
     }
   ],
   image: PuppyImages.first,
