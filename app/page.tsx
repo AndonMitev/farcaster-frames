@@ -5,16 +5,7 @@ import type { Metadata } from 'next';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'Begin'
-    },
-    {
-      label: 'Begin 2 test'
-    },
-    {
-      label: 'Begin 3'
-    },
-    {
-      label: 'Begin 4'
+      label: 'Publish cast'
     }
   ],
   image: PuppyImages.first,
